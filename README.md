@@ -32,7 +32,7 @@ context.dtDebExecution = TalendDate.getCurrentDate();
 Début de la génération du calendrier = TalendDate.formatDate("dd-MM-yyyy HH:mm:ss",context.dtDebExecution)
 
 
-tJava_2 (Fin génération)
+**tJava_2** (Fin génération)
 Fin de la génération du calendrier = TalendDate.formatDate("dd-MM-yyyy HH:mm:ss",TalendDate.getCurrentDate())
 
 Temps d'exécution                  = TalendDate.diffDate(TalendDate.getCurrentDate(), context.dtDebExecution, "mm")+ "min "
@@ -41,49 +41,49 @@ Temps d'exécution                  = TalendDate.diffDate(TalendDate.getCurrentD
 
 Les colonnes utilisées dans les tMap
 
-DT_JOUR  	  		  = TalendDate.addDate(context.dtDeb, nombreDeLigne.NUM_LIGNE, "dd") 
+**DT_JOUR**  	  		  = TalendDate.addDate(context.dtDeb, nombreDeLigne.NUM_LIGNE, "dd") 
 
-ID_JOUR  	  		  = Integer.parseInt(TalendDate.formatDate("yyyyMMdd", detailDate.DT_JOUR)) 
+**ID_JOUR**  	  		  = Integer.parseInt(TalendDate.formatDate("yyyyMMdd", detailDate.DT_JOUR)) 
 
-NB_ANNEE 	  		  = TalendDate.getPartOfDate("YEAR", detailDate.DT_JOUR) 
+**NB_ANNEE**	  		  = TalendDate.getPartOfDate("YEAR", detailDate.DT_JOUR) 
 
-NB_SEMESTRE   		  = TalendDate.getPartOfDate("MONTH", detailDate.DT_JOUR)<6?1:2 
+**NB_SEMESTRE**   		  = TalendDate.getPartOfDate("MONTH", detailDate.DT_JOUR)<6?1:2 
 
-NB_TRIMESTRE  		  = TalendDate.getPartOfDate("MONTH", detailDate.DT_JOUR)<3?1:
+**NB_TRIMESTRE**	  = TalendDate.getPartOfDate("MONTH", detailDate.DT_JOUR)<3?1:
 						TalendDate.getPartOfDate("MONTH", detailDate.DT_JOUR)<6?2:
 						TalendDate.getPartOfDate("MONTH", detailDate.DT_JOUR)<9?3:4 
 			   
-NB_MOIS		          = TalendDate.getPartOfDate("MONTH", detailDate.DT_JOUR)+1 
+**NB_MOIS**		          = TalendDate.getPartOfDate("MONTH", detailDate.DT_JOUR)+1 
 
-NB_JOUR_ANNEE         = TalendDate.getPartOfDate("DAY_OF_YEAR", detailDate.DT_JOUR) 	   
+**NB_JOUR_ANNEE**         = TalendDate.getPartOfDate("DAY_OF_YEAR", detailDate.DT_JOUR) 	   
 
-NB_JOUR_MOIS  		  = TalendDate.getPartOfDate("DAY_OF_MONTH", detailDate.DT_JOUR) 
+**NB_JOUR_MOIS** 		  = TalendDate.getPartOfDate("DAY_OF_MONTH", detailDate.DT_JOUR) 
 
-NB_JOUR_SEMAINE 	  = TalendDate.getPartOfDate("DAY_OF_WEEK", detailDate.DT_JOUR)-1==0?7: 
+**NB_JOUR_SEMAINE**	  = TalendDate.getPartOfDate("DAY_OF_WEEK", detailDate.DT_JOUR)-1==0?7: 
 						TalendDate.getPartOfDate("DAY_OF_WEEK", detailDate.DT_JOUR)-1 
 				  
-NB_SEMAINE_ANNEE 	  = TalendDate.getPartOfDate("WEEK_OF_YEAR", detailDate.DT_JOUR) 
+**NB_SEMAINE_ANNEE**	  = TalendDate.getPartOfDate("WEEK_OF_YEAR", detailDate.DT_JOUR) 
 
-LB_MOIS 			  = TalendDate.formatDate("MMMM", detailDate.DT_JOUR).substring(0, 1).toUpperCase() + 
+**LB_MOIS** 			  = TalendDate.formatDate("MMMM", detailDate.DT_JOUR).substring(0, 1).toUpperCase() + 
 						TalendDate.formatDate("MMMM", detailDate.DT_JOUR).substring(1, TalendDate.formatDate("MMMM", detailDate.DT_JOUR).length()) 
 		  
 		  
-LB_JOUR         	  = TalendDate.getPartOfDate("DAY_OF_WEEK", detailDate.DT_JOUR)==2?"Lundi":
+**LB_JOUR**         	  = TalendDate.getPartOfDate("DAY_OF_WEEK", detailDate.DT_JOUR)==2?"Lundi":
 						TalendDate.getPartOfDate("DAY_OF_WEEK", detailDate.DT_JOUR)==3?"Mardi":
 						TalendDate.getPartOfDate("DAY_OF_WEEK", detailDate.DT_JOUR)==4?"Mercredi":
 						TalendDate.getPartOfDate("DAY_OF_WEEK", detailDate.DT_JOUR)==5?"Jeudi":
 						TalendDate.getPartOfDate("DAY_OF_WEEK", detailDate.DT_JOUR)==6?"Vendredi":
 						TalendDate.getPartOfDate("DAY_OF_WEEK", detailDate.DT_JOUR)==7?"Samedi":"Dimanche" 	  
 			
-BL_DERNIER_JOUR_MOIS = 	TalendDate.compareDate(TalendDate.getLastDayOfMonth(detailDate.DT_JOUR), detailDate.DT_JOUR,"yyyy-MM-dd")==0?1:0 
+**BL_DERNIER_JOUR_MOIS** = 	TalendDate.compareDate(TalendDate.getLastDayOfMonth(detailDate.DT_JOUR), detailDate.DT_JOUR,"yyyy-MM-dd")==0?1:0 
 
-BL_BISSEXTILE 		 = ((double)TalendDate.getPartOfDate("YEAR", detailDate.DT_JOUR)/4)==Math.floor(TalendDate.getPartOfDate("YEAR", detailDate.DT_JOUR)/4)?1:0 
+**BL_BISSEXTILE** 		 = ((double)TalendDate.getPartOfDate("YEAR", detailDate.DT_JOUR)/4)==Math.floor(TalendDate.getPartOfDate("YEAR", detailDate.DT_JOUR)/4)?1:0 
 
-BL_WEEK_END 		 = 	TalendDate.getPartOfDate("DAY_OF_WEEK", detailDate.DT_JOUR)==7
+**BL_WEEK_END** 		 = 	TalendDate.getPartOfDate("DAY_OF_WEEK", detailDate.DT_JOUR)==7
 				        || TalendDate.getPartOfDate("DAY_OF_WEEK", detailDate.DT_JOUR)==1 ?1:0 
 
 
-BL_JOUR_FERIE = 0
+**BL_JOUR_FERIE** = 0
 			
 			
 NB : Pour la colonne ID_JOUR, il est important de mettre le format yyyyMMdd et non YYYYMMDD.
