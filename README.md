@@ -26,7 +26,7 @@
 
  ********** Liste des fonctions utilisées ************
 
-** tJava_1 ** (Initialiser variable)
+**tJava_1** (Initialiser variable)
 context.nbJours = (int)TalendDate.diffDate(context.dtFin, context.dtDeb, "dd")+1;
 context.dtDebExecution = TalendDate.getCurrentDate();
 Début de la génération du calendrier = TalendDate.formatDate("dd-MM-yyyy HH:mm:ss",context.dtDebExecution)
