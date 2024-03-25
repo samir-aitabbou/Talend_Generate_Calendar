@@ -24,7 +24,7 @@
 
 
 
- ********** Liste des fonctions utilisées ************
+ ********** **Liste des fonctions utilisées** ************
 
 **tJava_1** (Initialiser variable)
 context.nbJours = (int)TalendDate.diffDate(context.dtFin, context.dtDeb, "dd")+1;
